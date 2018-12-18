@@ -25,3 +25,5 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "shell", path: "install.sh"
 end
+
+//víc zde: https://github.com/petrpepe/vagrant-pdns-poweradmin
