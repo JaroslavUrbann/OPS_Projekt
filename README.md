@@ -6,4 +6,5 @@ PowerDNS: https://github.com/petrpepe/vagrant-pdns-poweradmin
 
 # Auhors
 Boss: Pavel Rudolf
+
 Others: Ilja Larionov, Petr Svoboda, Jaroslav Urban 
