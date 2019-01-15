@@ -1,6 +1,9 @@
 # tady bude ansible code pro dns bro
 https://github.com/PowerDNS/pdns-ansible
 
+# Tady je vše co k tomu je potřeba + napojení na MySQL
+https://github.com/PowerDNS/pdns-ansible/tree/master/tasks
+
 ---
 
 # By default, no PowerDNS Authoritative Server repository will be configured by the role
