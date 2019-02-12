@@ -30,3 +30,6 @@ https://github.com/PowerDNS/pdns-ansible/tree/master/tasks
         priv_host:
           - "%"
     pdns_install_repo: "{{ pdns_auth_powerdns_repo_41 }}"
+
+
+https://cloud.garr.it/support/kb/general/installAuthoritativeDNS/
