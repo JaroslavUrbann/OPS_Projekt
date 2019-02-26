@@ -15,13 +15,13 @@ https://github.com/PowerDNS/pdns-ansible/tree/master/tasks
     pdns_config:
       master: true
       slave: false
-      local-address: '192.0.2.77'
+      local-address: '10.1.1.20'
     pdns_backends:
       gmysql:
-        host: 192.0.2.120
+        host: 10.1.1.20
         port: 3306
         user: powerdns
-        password: P0w3rDn5
+        password: passwd
         dbname: pdns
     pdns_mysql_databases_credentials:
       gmysql:
