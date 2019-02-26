@@ -1,5 +1,3 @@
----
-
 dhcpd_authoritative: True
 dhcpd_interfaces: [ eth0 ]
 ansible_domain: bulb.int
