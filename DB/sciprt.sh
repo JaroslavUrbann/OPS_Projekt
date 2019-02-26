@@ -1,5 +1,5 @@
 #!/bin/sh
-mysql --user root --password='root' << SQL >> session.log 2>&1
+mysql --user root --password='root' 
 
 CREATE TABLE Users(
     id int auto_increment primary key
