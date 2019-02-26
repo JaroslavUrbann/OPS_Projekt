@@ -5,7 +5,7 @@
 Vagrant.configure("2") do |config|
 
   config.vm.define "db" do |db|
-    db.vm.box = "hashicorp/precise64"
+    db.vm.box = "centos/7"
     db.vm.hostname = "db"
     db.vm.network "private_network", ip: "10.1.1.10", netmask: "24"
     db.vm.provision "ansible" do |ansible|
@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "dns" do |dns|
-    dns.vm.box = "hashicorp/precise64"
+    dns.vm.box = "centos/7"
     dns.vm.hostname = "dns"
     dns.vm.network "private_network", ip: "10.1.1.20", netmask: "24"
     dns.vm.provision "ansible" do |ansible|
@@ -23,7 +23,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "slave" do |slave|
-    slave.vm.box = "hashicorp/precise64"
+    slave.vm.box = "centos/7"
     slave.vm.hostname = "slave"
     slave.vm.network "private_network", ip: "10.1.1.30", netmask: "24"
     slave.vm.provision "ansible" do |ansible|
@@ -32,7 +32,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "dhcp" do |dhcp|
-    dhcp.vm.box = "hashicorp/precise64"
+    dhcp.vm.box = "centos/7"
     dhcp.vm.hostname = "dhcp"
     dhcp.vm.network "private_network", ip: "10.1.1.40", netmask: "24"
     dhcp.vm.provision "ansible" do |ansible|
@@ -41,7 +41,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "client01" do |client01|
-    client01.vm.box = "hashicorp/precise64"
+    client01.vm.box = "centos/7"
     client01.vm.hostname = "client01"
     client01.vm.provision "ansible" do |ansible|
       ansible.playbook = "client01.yml"
