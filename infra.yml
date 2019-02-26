@@ -1,0 +1,8 @@
+- name: Infrastructure Services [DHCP server]
+  hosts: target-node
+
+  vars_files:
+    - dhcpd.yml
+
+  roles:
+     - debops.dhcpd
