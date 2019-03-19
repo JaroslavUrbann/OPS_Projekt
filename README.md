@@ -1,1 +1,1 @@
-Skupina: Pavel Rudolf, Ilja Larionov, Petr Svoboda, Jaroslav Urban 
+Skupina: Ilja Larionov, Pavel Rudolf, Petr Svoboda, Jaroslav Urban 
