@@ -3,7 +3,7 @@ dhcpd_interfaces: [ eth0 ]
 ansible_domain: bulb.int
 
 # where to ask for DNS Server / dhcpd_dns_servers
-ansible_default_ipv4.address: 10.1.1.1
+ansible_default_ipv4.address: 192.168.121.3
 
 dhcpd_shared_networks:
   - name: 'ls-bulb-net'
@@ -14,19 +14,19 @@ dhcpd_shared_networks:
       max-lease-time 900;
 
 dhcpd_subnets_local:
- - subnet: '10.1.2.0'
+ - subnet: '192.168.122.1'
    netmask: '255.255.255.0'
-   routers: [ '10.1.2.1' ]
+   routers: [ '192.168.122.1' ]
    pools:
      - comment: "ls-web pool"
-       range: '10.1.2.100 10.1.2.199'
+       range: '192.168.122.100 192.168.122.199'
 
- - subnet: '10.1.3.0'
+ - subnet: '192.168.123.1'
    netmask: '255.255.255.0'
-   routers: '10.1.3.1'
+   routers: '192.168.123.1'
    options: |
      default-lease-time 300;
      max-lease-time 7200;
    pools:
      - comment: "ls-db pool"
-       range: '10.1.3.100 10.1.3.199'
+       range: '192.168.123.100 192.168.123.199'
