@@ -1,35 +1,21 @@
-# tady bude ansible code pro dns bro
-https://github.com/PowerDNS/pdns-ansible
-
-# Tady je vše co k tomu je potřeba + napojení na MySQL / SQLLite
-https://github.com/PowerDNS/pdns-ansible/tree/master/tasks
-
----
 - hosts: all
   sudo: true
-  become: yes
-  become_user: root
-  roles:
-    - { role: PowerDNS.pdns }
   vars:
-    pdns_config:
+  - pdns_config:
       master: true
       slave: false
-      local-address: '10.1.1.20'
-    pdns_backends:
+      local-address: '192.168.121.2'
+  - pdns_backends:
       gmysql:
-        host: 10.1.1.20
+        host: 192.168.121.3
         port: 3306
         user: powerdns
         password: passwd
         dbname: pdns
-    pdns_mysql_databases_credentials:
+  - pdns_mysql_databases_credentials:
       gmysql:
         priv_user: root
-        priv_password: myrootpass
+        priv_password: root
         priv_host:
           - "%"
-    pdns_install_repo: "{{ pdns_auth_powerdns_repo_41 }}"
-
-
-https://cloud.garr.it/support/kb/general/installAuthoritativeDNS/
+  - pdns_install_repo: "{{ pdns_auth_powerdns_repo_41 }}"
