@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "db" do |db|
     db.vm.box = "centos/7"
     db.vm.hostname = "db"
-    db.vm.network "private_network", ip: "192.168.121.2" netmask: "24"
+    db.vm.network "private_network", ip: "192.168.122.2" netmask: "24"
     db.vm.provision "ansible" do |ansible|
       ansible.playbook = "db.yml"
     end
@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "dns" do |dns|
     dns.vm.box = "centos/7"
     dns.vm.hostname = "dns"
-    dns.vm.network "private_network", ip: "192.168.121.2" netmask: "24"
+    dns.vm.network "private_network", ip: "192.168.123.2" netmask: "24"
     dns.vm.provision "ansible" do |ansible|
       ansible.playbook = "dns.yml"
     end
@@ -25,7 +25,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "slave" do |slave|
     slave.vm.box = "centos/7"
     slave.vm.hostname = "slave"
-    slave.vm.network "private_network", ip: "192.168.121.2", netmask: "24"
+    slave.vm.network "private_network", ip: "192.168.124.2", netmask: "24"
     slave.vm.provision "ansible" do |ansible|
       ansible.playbook = "slave.yml"
     end
