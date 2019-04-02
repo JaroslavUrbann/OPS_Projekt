@@ -14,19 +14,9 @@ dhcpd_shared_networks:
       max-lease-time 900;
 
 dhcpd_subnets_local:
- - subnet: '192.168.122.1'
+ - subnet: '192.168.121.2'
    netmask: '255.255.255.0'
    routers: [ '192.168.122.1' ]
    pools:
      - comment: "ls-web pool"
        range: '192.168.122.100 192.168.122.199'
-
- - subnet: '192.168.123.1'
-   netmask: '255.255.255.0'
-   routers: '192.168.123.1'
-   options: |
-     default-lease-time 300;
-     max-lease-time 7200;
-   pools:
-     - comment: "ls-db pool"
-       range: '192.168.123.100 192.168.123.199'
