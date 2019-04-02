@@ -2,8 +2,6 @@
 ---
 - hosts: all
   sudo: true
-  become: yes
-  become_user: root
   tasks:
         - name: Install MariaDB
           yum:
@@ -24,14 +22,10 @@
               name: mysqld 
               state: started 
               enabled: true
-         - name: Create db table
-              script: "./DB/script.sh"
+        - name: Create db table
+          script: "./DB/script.sh"
 
         - name: restart mysqld
           service: 
             name: mysqld 
             state: restarted
-            
-
-    
-    
