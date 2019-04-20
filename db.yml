@@ -1,31 +1,16 @@
-# ansible code for db
----
-- hosts: all
+- hosts: db
   sudo: true
   tasks:
-        - name: Install MariaDB
-          yum:
-              name: mariadb-server, mariadb
-              state: latest
-        - name: Install MySQL 5.7 repo
-          yum: 
-              name: http://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm
-              state: present
-        - name: Install MySQL 5.7
-          yum: pkg={{ item }}
-          with_items:
-              - mysql-community-server
-              - mysql-community-client
-              - MySQL-python
-        - name: Start the MySQL service
-          service: 
-              name: mysqld 
-              state: started 
-              enabled: true
-        - name: Create db table
-          script: "./DB/script.sh"
-
-        - name: restart mysqld
-          service: 
-            name: mysqld 
-            state: restarted
+    - name: installs mariadb
+      yum:
+        name: mariadb-server, mariadb
+        state: latest
+    - name: starts mariadb
+      service: 
+        name: mariadb
+        state: started
+        enabled: true
+    - name: restarts mariadb
+      service:
+        name: mariadb
+        state: restarted

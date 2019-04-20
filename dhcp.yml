@@ -1,22 +1,21 @@
-dhcpd_authoritative: True
-dhcpd_interfaces: [ eth0 ]
-ansible_domain: bulb.int
-
-# where to ask for DNS Server / dhcpd_dns_servers
-ansible_default_ipv4.address: 192.168.121.3
-
-dhcpd_shared_networks:
-  - name: 'ls-bulb-net'
-    comment: "Remote shared network"
-    subnets: '{{ dhcpd_subnets_local }}'
-    options: |
-      default-lease-time 600;
-      max-lease-time 900;
-
-dhcpd_subnets_local:
- - subnet: '192.168.121.5'
-   netmask: '255.255.255.0'
-   routers: [ '192.168.121.5' ]
-   pools:
-     - comment: "ls-web pool"
-       range: '192.168.121.100 192.168.121.199'
+- hosts: dhcp
+  sudo: true
+  tasks:
+      - name: install kea and mariadb
+        yum:
+            name: kea, mariadb, mariadb-server
+            state: present
+      - name: start db
+        service:
+            name: mariadb
+            state: started
+            enabled: true
+      - name: copy config
+        copy:
+            src: kea.conf
+            dest: /etc/kea/kea.conf
+      - name: start kea
+        service:
+            name: kea-dhcp4
+            state: started
+            enabled: true

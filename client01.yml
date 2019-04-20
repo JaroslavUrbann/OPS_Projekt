@@ -1,1 +1,7 @@
-# ansible code for client01
+- hosts: client01
+  sudo: true
+  tasks:
+    - name: removes static IP
+      command: ip addr del 192.168.121.6/24 dev eth1
+    - name: adds dhcp
+      command: dhclient eth1
