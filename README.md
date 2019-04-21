@@ -12,14 +12,29 @@
 <li>cd OPS_Projekt</li>
 <li>vagrant up</li>
 </ul>
-  
+
+<h3>Výsledek:</h3>  
+<ul>
+<li>Vytvořená databáze</li>
+<li>Funkční DNS server</li>
+<li>Funkční DHCP server</li>
+  <ul>
+    <li>Přiřazuje adresy od .20 do .99</li>
+    <li>Návod na otestování:</li>
+    <ul>
+      <li>vagrant ssh client01</li>
+      <li>ip addr show</li>
+    </ul>
+  </ul>
+</ul>
+
 <h3>Seznam použitých technologií:</h3>  
 <ul>
 <li>VirtualBox</li>
 <li>Vagrant (pro správu virtuálních strojů a vytvoření virtuální sítě)</li>
 <li>Ansible (pro nastavení a konfiguraci úloh pro instalaci)</li>
 <li>PowerDNS</li>
-<li>MySQL</li>
+<li>Mariadb</li>
 </ul>
   
 <h3>Adresy serverů:</h3>  
