@@ -11,7 +11,7 @@
         port: 3306
         user: powerdns
         password: passwd
-        dbname: pdns
+        dbname: domains
   - pdns_mysql_databases_credentials:
       gmysql:
         priv_user: root
